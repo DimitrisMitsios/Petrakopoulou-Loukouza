@@ -4,10 +4,10 @@
 //     componentTagger (dev-only), VITE_* env injection, @ path alias, React/TanStack dedupe,
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
-import { defineConfig } from '@tanstack/start/config'
+// DELETE OR COMMENT OUT THIS LINE IF IT EXISTS:
+import { cloudflare } from '@cloudflare/vite-plugin' 
 
-export default defineConfig({
-  server: {
-    preset: 'vercel', // This handles everything automatically
-  },
-})
+// AND REMOVE IT FROM YOUR PLUGINS ARRAY:
+plugins: [
+  cloudflare(), // <-- DELETE THIS
+]
